@@ -135,12 +135,7 @@ def getStats(data, include_groupme=False, total=True, percent=True, compact=True
 				avg_data_len = round(sum(v)*1.0 / num_msgs, 1)
 			l.append((str(k), num_msgs, avg_data_len))
 	l = sorted(l, key=lambda k:k[2], reverse=True)
-#	if total:
-#		l.append(('Average', round(total_msgs * 1.0 / num_people, 1), round(total_data * 1.0 / num_people, 1)))
-#		l.append(('Total', total_msgs, total_data))
-#	else:
-#		l.append(('Average', round(total_msgs * 1.0 / num_people, 1), round(total_data * 1.0 / total_msgs, 1)))
-#		l.append(('Total', total_msgs))
+
 	if compact:
 		return [(x[0],x[2]) for x in l]
 	return l
