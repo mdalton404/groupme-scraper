@@ -60,7 +60,7 @@ def getOccurances(phrase, count_dups=False, print_matches=False, match_exactly=F
 				else:
 					count = text.count(phrase)
 			if count > 0 and (print_matches or print_user == user):
-				print user, ':', original_text
+				print(user, ':', original_text)
 			if count_dups:
 				return min(count, 1)
 			else:
@@ -115,7 +115,7 @@ compact - don't return the total num of messages and percentage
 def getStats(data, include_groupme=False, total=True, percent=True, compact=True):
 	l = []
 	num_people = total_msgs = total_data_per_person = total_data = 0
-	for k,v in data.iteritems():
+	for k,v in data.items():
 		if not include_groupme and str(k) == 'GroupMe':
 			continue
 		num_people += 1
@@ -145,23 +145,9 @@ if __name__ == "__main__":
 	args = parser.parse_args()
 	csv_file = args.csv_file
 	if args.phrase:
-		result = readCsv(csv_file, getOccurances(
-								  args.phrase, 
-								  print_matches=args.print_matches,
-								  count_dups=args.count_dups,
-								  match_exactly=args.match_exactly,
-								  print_user=args.print_user)
-						)
-		print getStats(result,
-					   include_groupme=args.include_groupme,
-					   total=(not args.average), 
-					   compact=(not args.no_compact)
-					  )
+		result = readCsv(csv_file, getOccurances(args.phrase, print_matches=args.print_matches, count_dups=args.count_dups, match_exactly=args.match_exactly, print_user=args.print_user))
+		print(getStats(result, include_groupme=args.include_groupme, total=(not args.average), compact=(not args.no_compact)))
 	else:
-		print showStats(csv_file,
-						None,
-						include_groupme=args.include_groupme,
-					   	total=(not args.average), 
-					   	compact=(not args.no_compact)
-					   	)
-	
+		f2 = open("analysis.csv", "w", newline='')
+		wr2 = csv.writer(f2, quoting=csv.QUOTE_ALL)
+		wr2.writerows(showStats(csv_file, None, include_groupme=args.include_groupme, total=(not args.average), compact=(not args.no_compact)))
