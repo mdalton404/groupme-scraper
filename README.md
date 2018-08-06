@@ -1,9 +1,9 @@
 GroupMe Data Collection
 --------------
 
-Originally written by Abu Qader
+Originally written by @aqader
 
-Updated to Python 3.6 by Matt Dalton
+Updated to Python 3.6 by @mdalton404
 
 This is a set of simple scripts to download data from GroupMe's API for a particular chat. It ouputs everything into a CSV file and can be used to look at user analytics, group analytics and even some interesting ML applications. 
 
@@ -19,6 +19,3 @@ Instructions
   - ```python retrieve_msgs.py <YOUR ACCESS TOKEN> -g "Random Group Name"``` will get data for your group into a CSV file named after the group
   - ```python retrieve_msgs.py <YOUR ACCESS TOKEN> -d -a``` will output all of your DIRECT MESSAGES into a separate csv file for each person.
   - ```python retrieve_msgs.py <YOUR ACCESS TOKEN> -d -g "Random Person" -c jlaw.csv``` will output your DIRECT MESSAGES from that person into a csv file. 
-  
-Adapted from @youyanggu for 3.6
-
