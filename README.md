@@ -2,7 +2,9 @@ GroupMe Data Collection
 --------------
 
 Originally written by Abu Qader
+
 Updated to Python 3.6 by Matt Dalton
+
 This is a set of simple scripts to download data from GroupMe's API for a particular chat. It ouputs everything into a CSV file and can be used to look at user analytics, group analytics and even some interesting ML applications. 
 
 Requirements:
