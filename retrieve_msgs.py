@@ -1,8 +1,8 @@
 """
 
 Tool to retrieve GroupMe messages using the GroupMe API and output them to a CSV file.
-written by Abu Qader
-updated to Python 3.6 by Matt Dalton
+written by @aqader
+updated to Python 3.6 by @mdalton404
 
 """
 
